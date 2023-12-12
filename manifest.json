@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Anticrastinating",
+  "version": "1.0",
+  "description": "A Chrome extension to limit time spent on specific websites.",
+  "permissions": ["tabs", "history", "activeTab"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
