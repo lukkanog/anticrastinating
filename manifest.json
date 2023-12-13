@@ -5,9 +5,9 @@
   "description": "A Chrome extension to limit time spent on specific websites.",
   "permissions": ["tabs", "history", "activeTab"],
   "action": {
-    "default_popup": "src/popup.html"
+    "default_popup": "popup.html"
   },
   "background": {
-    "service_worker": "src/background.js"
+    "service_worker": "background.js"
   }
 }

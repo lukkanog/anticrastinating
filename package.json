@@ -1,0 +1,23 @@
+{
+  "name": "anticrastinating",
+  "version": "1.0.0",
+  "description": "Browser extension to avoid time wasting",
+  "main": "index.js",
+  "repository": "https://github.com/lukkanog/anticrastinating.git",
+  "author": "lukkanog <lukanog@hotmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "webpack --watch --config webpack/webpack.config.js"
+  },
+  "dependencies": {
+    "@types/chrome": "^0.0.254",
+    "copy-webpack-plugin": "^11.0.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "webpack-cli": "^5.1.4"
+  },
+  "devDependencies": {
+    "webpack": "^5.89.0"
+  }
+}
