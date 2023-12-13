@@ -3,7 +3,7 @@
   "name": "Anticrastinating",
   "version": "1.0",
   "description": "A Chrome extension to limit time spent on specific websites.",
-  "permissions": ["tabs", "history", "activeTab"],
+  "permissions": ["tabs", "history", "storage"],
   "action": {
     "default_popup": "src/popup.html"
   },

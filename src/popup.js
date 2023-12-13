@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     chrome.storage.local.get("websites", function (data) {
       const websites = data.websites || [];
       websites.push({ website, timeLimit });
+      console.log(websites)
       chrome.storage.local.set({ websites }, function () {
         alert("Website and time limit added successfully!");
       });
