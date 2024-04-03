@@ -9,5 +9,8 @@
   },
   "background": {
     "service_worker": "src/background.js"
+  },
+  "icons": {
+    "128": "assets/logo-128.png"
   }
 }
