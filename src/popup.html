@@ -9,23 +9,23 @@
 </head>
 
 <body>
-  <h1 class="title">Anticrastinating</h1>
-  <h2 class="subtitle">Configure a website route with a specified time limit for access restriction. You can designate
-    either a whole website, such as <span class="bold">instagram.com</span>, or a specific path within a site, like
-    <span class="bold">instagram.com/reels</span>. This setting will block the designated website and all its subpaths
-    during the defined timeframe.
-  </h2>
-  <form id="websiteForm" class="form">
-    <label for="website" class="input-label">Route:</label>
-    <input type="text" id="website" class="input-field" required>
-    <label for="timeLimit" class="input-label">Time Limit (minutes):</label>
-    <input type="number" id="timeLimit" class="input-field" required>
-    <button type="submit" class="submit-button">Add Route</button>
-  </form>
+  <header class="main-header">
+    <h1 class="title">anticrastinating.</h1>
+  </header>
+  <div class="add">
+    <h2 class="subtitle">add website to limit</h2>
+    <form id="websiteForm" class="form">
+      <!-- <label for="website" class="input-label">Route:</label> -->
+      <input type="text" id="website" class="input-field" placeholder="Route (e.g instagram.com)" required >
+      <!-- <label for="timeLimit" class="input-label">Time Limit (minutes):</label> -->
+      <input type="number" id="timeLimit" class="input-field" placeholder="Time limit (in minutes)" required>
+      <button type="submit" class="submit-button">+</button>
+    </form>
+  </div>
   <span class="divider"></span>
   <div id="websiteList" class="website-list">
-    <h2 class="subtitle">Current Routes</h2>
-    <ul id="websiteListItems" class="website-list-items">
+      <h2 class="subtitle">current routes</h2>
+      <ul id="websiteListItems" class="website-list-items">
       <!-- <li class="route-item">
         <div class="icon-and-name">
           <img src="https://www.google.com/s2/favicons?domain=instagram.com" class="website-icon">
