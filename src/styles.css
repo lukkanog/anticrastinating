@@ -140,3 +140,12 @@ button {
 .remove-button:hover {
   opacity: .75;
 }
+
+.centered-content{
+  width: 100%;
+  text-align: center;
+}
+
+.centered-content p {
+  font-size: 1rem;
+}
