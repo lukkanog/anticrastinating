@@ -15,24 +15,34 @@ const verificationInterval = setInterval(async () => {
     return;
   }
 
-  const limitedRoute = await getRouteLimit(currentRoute);
-  console.log(limitedRoute);
+  const matchedRoutes = await getRouteLimits(currentRoute);
+  console.log(matchedRoutes);
 
-  if (!limitedRoute) {
+  if (!matchedRoutes) {
     return;
   }
 
-  const timeSpent = await updateRouteTimeSPent(limitedRoute);
-  console.log(timeSpent);
+  await updateRoutes(matchedRoutes);
 }, cycleIntervalInMs);
 
-async function updateRouteTimeSPent(route) {
+async function updateRoutes(routes) {
+  routes.forEach(async route => {
+    console.log(await updateRouteTimeSpent(route));
+  });
+}
+
+async function updateRouteTimeSpent(route) {
   await new Promise(resolve => {
     chrome.storage.local.get("websites", function (data) {
       const websites = data.websites || [];
       const websiteIndex = websites.findIndex(website => website.website === route.website);
       
-      if (!isDateFromToday(websites[websiteIndex].lastVisited)) {
+      console.log(route)
+      console.log(websiteIndex)
+
+      const lastVisit = websites[websiteIndex]?.lastVisited 
+
+      if (!lastVisit || !isDateFromToday(lastVisit)) {
         websites[websiteIndex].timeSpent = 0;
       }
       
@@ -72,10 +82,10 @@ async function getLimitedRoutes() {
   return websites;
 }
 
-const getRouteLimit = async route => {
+const getRouteLimits = async route => {
   const limitedRoutes = await getLimitedRoutes();
-  const limitedRoute = limitedRoutes.find(limitedRoute => route.includes(limitedRoute.website));
-  return limitedRoute;
+  const matchedRoutes = limitedRoutes.filter(limitedRoute => route.includes(limitedRoute.website));
+  return matchedRoutes;
 }
 
 const isDateFromToday = date => {
